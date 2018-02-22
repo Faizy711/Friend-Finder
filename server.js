@@ -19,14 +19,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-// Static directory
-app.use(express.static("app/public"));
 
 // Routes
 // =============================================================
-require("./app/routes/apiRoutes.js")(app);
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
-// Starts the server to begin listening
+//Listening
 // =============================================================
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
