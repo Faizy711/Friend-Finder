@@ -6,7 +6,8 @@
     <title>Survey Page</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
 
 </head>
 
@@ -156,8 +157,8 @@
                         <h5 class="modal-title" id="exampleModalLongTitle">Your Match!</h5>
                     </div>
                     <div class="modal-body">
-                            <h6 class="modal-title" id="newFriend"></h6>
-                            <img src="#" id="matchImg" alt=":(" style="width:100px;height:100px;"></img>
+                        <h6 class="modal-title" id="newFriend"></h6>
+                        <img src="#" id="matchImg" alt=":(" style="width:100px;height:100px;"></img>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -171,15 +172,13 @@
         <a href="https://github.com/Faizy711/Friend-Finder">GitHubRepo</a>
     </div>
 
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
 
     <script type="text/javascript">
         //script for the submit on click btn
-        $("#submitButton").on("click", event =>{
+        $("#submitButton").on("click", event => {
             //need topush the answer value number to scores for new friends
             //new array variable
             //var inputScores = [];
@@ -192,25 +191,25 @@
             //Input over score and name to new obj
             //grab the new element from the html
             var userInput = {
-                name:$("#name").val(),
-                photo:$("#photo").val(),
+                name: $("#name").val(),
+                photo: $("#photo").val(),
                 scores: [
-                    $("#Question_1").val(), 
-                    $("#Question_2").val(), 
-                    $("#Question_3").val(), 
-                    $("#Question_4").val(), 
-                    $("#Question_5").val(), 
-                    $("#Question_6").val(), 
-                    $("#Question_7").val(), 
-                    $("#Question_8").val(), 
-                    $("#Question_9").val(), 
-                    $("#Question_10").val(), 
-                    ]
+                    $("#Question_1").val(),
+                    $("#Question_2").val(),
+                    $("#Question_3").val(),
+                    $("#Question_4").val(),
+                    $("#Question_5").val(),
+                    $("#Question_6").val(),
+                    $("#Question_7").val(),
+                    $("#Question_8").val(),
+                    $("#Question_9").val(),
+                    $("#Question_10").val()
+                ]
             };
 
             var currentURL = window.location.origin;
 
-            $.post("/api/friends", userInput).done( data =>{
+            $.post("/api/friends", userInput).done(data => {
                 $("#newFriend").text(data.name);
                 $("#matchImg").attr("src", data.photo);
                 //having trouble with modal

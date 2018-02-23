@@ -1,7 +1,7 @@
 // *********************************************************************************
 // Server.js - This file is the initial starting point for the Node/Express server.
 // *********************************************************************************
-
+//Copy and pasted from Activities
 // Dependencies
 // =============================================================
 var express = require("express");

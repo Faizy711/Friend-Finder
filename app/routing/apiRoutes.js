@@ -14,8 +14,9 @@ module.exports = (app) => {
         //req.body from new character post from Star Wars game, req.body hosts is equal to the JSON post sent from the user
         var userinputArr = req.body;
         //json parse the friendData
-        var friendArr = JSON.parse(friendData);
+        var friendArr = friendData;
         console.log(userinputArr);
+        console.log(friendArr);
         var matchFriend = differenceFunc(userinputArr,friendArr);
         console.log(matchFriend);
         //totalDifference call on the difference function
@@ -37,21 +38,30 @@ var differenceFunc = (newinputArr, friendArr) => {
     //for loop for each person in friendArr
     //get score arrays from each array?
     //we go through every person
-    var newArr = JSON.parse(newinputArr.scores);
+    var newArr = newinputArr["scores[]"];
+    //lowest diff variable to compare the next difference coming in
+    var lowestDiff = 1000;
+    
     
     for (var i = 0; i < friendArr.length; i++) {
         //a difference variable
         var difference = 0;
+        //ScoreArray for the array of scores
         var scoresArr = friendArr[i].scores;
         //another for loop going through the scores and calculating the difference which we then compare to each friend going through the outside loop
         for (var j = 0; j < newArr.length; j++) {
             difference += Math.abs(newArr[j] - scoresArr[j])
         }
-
-        if(difference <= 50){
+        //console logging for debugging
+        console.log(difference);
+        console.log(lowestDiff);
+        //if statement to compare the lowest diff
+        if(difference <= lowestDiff){
+            //if it is lower than at least 1000 then it will place the that friend array as the returned array and make lowestdiff = difference
             var matchingFriend = friendData[i];
-            difference = 50;
+            lowestDiff = difference;
         }
+        console.log(matchingFriend);
     }
     return matchingFriend;
 };
