@@ -17,18 +17,23 @@ module.exports = (app) => {
         console.log(newinputArr);
         var friendArr = JSON.parse(JSON.stringify(friendData));
         console.log(friendArr);
-        differenceArr = [];
+        var differenceArr = [];
         //totalDifference call on the difference function
         differenceArr = differenceFunc(friendArr, newinputArr);
         console.log(differenceArr);
         //min difference is the closest match
-        var min = Math.min.apply(null, differenceArr);
+        // var min = Math.min.apply(null, differenceArr);
+
+
         //find match function
-        var matchArr = findMatch(min,differenceArr);
+        var matchCount = findMatch(differenceArr);
         console.log(matchArr);
+        var match = friendData[matchCount];
+
+        res.json(match);
         
         //return the smallest difference in array
-        res.json(matchArr);
+        
 
     });
 }
@@ -39,12 +44,14 @@ var differenceFunc = (friendArr, newinputArr) => {
     //get score arrays from each array?
     //we go through every person
     var differenceArr = [];
-    for (var i = 0; i < friendArr.length; i++) {
+    
+    for (var i = 0; i < friendData.length; i++) {
         //a difference variable
         var difference = 0
+        var scoresArr = newinputArr[i].scores;
         //another for loop going through the scores and calculating the difference which we then compare to each friend going through the outside loop
-        for (var i = 0; i < newinputArr.scores.length; i++) {
-            difference += Math.abs(newinputArr.scores[i] - friendArr.scores[i])
+        for (var j = 0; j < scoresArr.length; j++) {
+            difference += Math.abs(scoresArr[j] - friendArr[i].scores[j])
         }
         //store the difference, im not sure if this works
         differenceArr.push(difference);
@@ -53,15 +60,15 @@ var differenceFunc = (friendArr, newinputArr) => {
     console.log(differenceArr);
 };
 
-var findMatch = function (min, differenceArr) {
+var findMatch = function (differenceArr) {
     //for loop that goes through all the matches to see 
-    var matchingFriendArr = [];
+    var matchingFriendCount = 0
     for (var i = 0; i < differenceArr.length; i++) {
-        if (differenceArr[i] === min) {
-            matchingFriendArr.push(friendData[i]);
+        if (differenceArr[i] <= differenceArr[matchingFriendCount]) {
+            matchingFriendCount = i;
         }
     }
-    return matchingFriendArr;
+    return matchingFriendCount;
 };
 
 

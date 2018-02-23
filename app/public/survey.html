@@ -186,7 +186,7 @@
 
             //for loop to go through the questions
             for(var i=1; i<10; i++){
-                inputScores.push($("#Question_"+i).val().trim());
+                inputScores.push(parseInt(("#Question_"+ i).val()));
             }
 
             //Input over score and name to new obj
@@ -197,10 +197,10 @@
                 scores: inputScores,
             };
 
-            $.post("/api/friends", userInput, data =>{
+            $.post("/api/friends", userInput).done( data =>{
                 $("#newFriend").text(data.name);
                 $("#matchImg").attr("src", data.photo);
-                //$("#modalPopup").modal();
+                $("#modalPopup").modal("toggle");
             });
             console.log("click");
         });
