@@ -1,67 +1,67 @@
 //Data
 var friendArray = [
     {
-    name:"Ahmed",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    name:"Person1",
+    photo:"https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
     scores:[
-        5,
-        1,
+        2,
         4,
+        2,
+        5,
+        5,
+        3,
+        1,
+        2,
+        3,
+        2
+      ]
+  },
+  {
+    name:"Person2",
+    photo:"https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
+    scores:[
         4,
         5,
         1,
         2,
-        5,
+        3,
+        4,
+        2,
+        3,
         4,
         1
       ]
   },
   {
-    name:"Ahmed",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    name:"Person3",
+    photo:"https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
     scores:[
         5,
         1,
         4,
-        4,
         5,
-        1,
         2,
-        5,
+        3,
         4,
-        1
+        3,
+        3,
+        3
       ]
   },
   {
-    name:"Ahmed",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    name:"Person4",
+    photo:"https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png",
     scores:[
-        5,
+        2,
         1,
-        4,
-        4,
-        5,
         1,
+        3,
         2,
         5,
-        4,
-        1
-      ]
-  },
-  {
-    name:"Ahmed",
-    photo:"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-    scores:[
-        5,
         1,
-        4,
-        4,
-        5,
         1,
-        2,
         5,
-        4,
-        1
+        5
       ]
   },
 ];
