@@ -182,24 +182,38 @@
         $("#submitButton").on("click", event =>{
             //need topush the answer value number to scores for new friends
             //new array variable
-            var inputScores = [];
+            //var inputScores = [];
 
             //for loop to go through the questions
-            for(var i=1; i<10; i++){
-                inputScores.push(parseInt(("#Question_"+ i).val()));
-            }
+            //for(var i=1; i<10; i++){
+            //    inputScores.push(parseInt($("#Question_"+i).val()));
+            //}
 
             //Input over score and name to new obj
             //grab the new element from the html
             var userInput = {
-                name:$("#name").val().trim(),
-                photo:$("#photo").val().trim(),
-                scores: inputScores,
+                name:$("#name").val(),
+                photo:$("#photo").val(),
+                scores: [
+                    $("#Question_1").val(), 
+                    $("#Question_2").val(), 
+                    $("#Question_3").val(), 
+                    $("#Question_4").val(), 
+                    $("#Question_5").val(), 
+                    $("#Question_6").val(), 
+                    $("#Question_7").val(), 
+                    $("#Question_8").val(), 
+                    $("#Question_9").val(), 
+                    $("#Question_10").val(), 
+                    ]
             };
+
+            var currentURL = window.location.origin;
 
             $.post("/api/friends", userInput).done( data =>{
                 $("#newFriend").text(data.name);
                 $("#matchImg").attr("src", data.photo);
+                //having trouble with modal
                 $("#modalPopup").modal("toggle");
             });
             console.log("click");
