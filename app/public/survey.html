@@ -6,8 +6,7 @@
     <title>Survey Page</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 
@@ -27,7 +26,7 @@
             <strong>Question 1</strong>
         </h3>
         <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="Question_1">
             <option selected>. . .</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -39,7 +38,7 @@
             <strong>Question 2</strong>
         </h3>
         <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="Question_2">
             <option selected>. . .</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -51,7 +50,7 @@
             <strong>Question 3</strong>
         </h3>
         <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="Question_3">
             <option selected>. . .</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -63,7 +62,7 @@
             <strong>Question 4</strong>
         </h3>
         <h4>You rarely do something just out of sheer curiosity.</h4>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="Question_4">
             <option selected>. . .</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -75,7 +74,7 @@
             <strong>Question 5</strong>
         </h3>
         <h4>People can rarely upset you.</h4>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="Question_5">
             <option selected>. . .</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -87,7 +86,7 @@
             <strong>Question 6</strong>
         </h3>
         <h4>It is often difficult for you to relate to other people’s feelings.</h4>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="Question_6">
             <option selected>. . .</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -99,7 +98,7 @@
             <strong>Question 7</strong>
         </h3>
         <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="Question_7">
             <option selected>. . .</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -111,7 +110,7 @@
             <strong>Question 8</strong>
         </h3>
         <h4>You rarely get carried away by fantasies and ideas.</h4>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="Question_8">
             <option selected>. . .</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -123,7 +122,7 @@
             <strong>Question 9</strong>
         </h3>
         <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="Question_9">
             <option selected>. . .</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -135,7 +134,7 @@
             <strong>Question 10</strong>
         </h3>
         <h4>You feel more energetic after spending time with a group of people.</h4>
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+        <select class="custom-select my-1 mr-sm-2" id="Question_10">
             <option selected>. . .</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -145,46 +144,66 @@
         </select>
         <!-- Button trigger modal -->
         <!-- I thought putting a modal would be better instead of an alert, I copied and pasted from bootstrap4 https://getbootstrap.com/docs/4.0/components/modal/ -->
-        <button type="submit" id="submitBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="submit" id="submitButton" class="btn btn-primary" data-toggle="modal">
             Submit
         </button>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+        <div id="modalPopup" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Y</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Your Match!</h5>
                     </div>
-                </div>
-
-                <div class="modal-body">
-                    <h6 class="modal-title" id="newFriend">...Ooops Something went wrong, we couldnt find your match :(</h6>
-                    <img src="#" id="matchImg" alt=":(" style="width:100px;height:100px;"></img>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Close</button>
+                    <div class="modal-body">
+                            <h6 class="modal-title" id="newFriend"></h6>
+                            <img src="#" id="matchImg" alt=":(" style="width:100px;height:100px;"></img>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+
         <a href="/api/friends">ViewAPI</a>
-        <a href="/api/friends">GitHubRepo</a>
+        <a href="https://github.com/Faizy711/Friend-Finder">GitHubRepo</a>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
     <script type="text/javascript">
         //script for the submit on click btn
+        $("#submitButton").on("click", event =>{
+            //need topush the answer value number to scores for new friends
+            //new array variable
+            var inputScores = [];
 
+            //for loop to go through the questions
+            for(var i=1; i<10; i++){
+                inputScores.push($("#Question_"+i).val().trim());
+            }
+
+            //Input over score and name to new obj
+            //grab the new element from the html
+            var userInput = {
+                name:$("#name").val().trim(),
+                photo:$("#photo").val().trim(),
+                scores: inputScores,
+            };
+
+            $.post("/api/friends", userInput, data =>{
+                $("#newFriend").text(data.name);
+                $("#matchImg").attr("src", data.photo);
+                //$("#modalPopup").modal();
+            });
+            console.log("click");
+        });
 
 
     </script>
