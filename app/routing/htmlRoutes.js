@@ -6,7 +6,7 @@ module.exports = (app) => {
     //HTML GET
     //Homepage get
     app.get("/", (req, res) => {
-        res.sendFile(path.join(__dirname,"../public/home.html"));
+        res.sendFile(path.join(__dirname,"../public/index.html"));
     });
     //Survey get
     app.get("/survey", (req, res) => {
@@ -14,6 +14,6 @@ module.exports = (app) => {
     });
     //default get??
     app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "../public/home.html"));
+        res.sendFile(path.join(__dirname, "../public/index.html"));
     })
 };
