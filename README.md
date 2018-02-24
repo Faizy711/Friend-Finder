@@ -1,5 +1,5 @@
 # Friend-Finder
-Javascript, Node, HTML, jQuery, Express
+Friend Finder app to find your best matched friend
 
 ## Assignment
 A Basic Survey where you answer question on a scale of 1(Strongly Disagree) to 5(Strongly Agree)
